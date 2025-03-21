@@ -4,6 +4,7 @@ import { NextResponse } from 'next/server'
 const publicRoutes = [
   '/',
   '/legal',
+  '/auth/callback',
   '/image'
 ]
 
