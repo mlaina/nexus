@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import { ArrowRight, CircuitBoard, Cpu, Database, Globe, Lock, Zap } from 'lucide-react'
 
@@ -5,6 +6,17 @@ import { Button } from '@/components/ui/button'
 import Login from '@/components/Login'
 
 export default function Home () {
+
+  const handleBalance = async () => {
+    const response = await fetch('/api/balance', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const data = await response.json()
+    console.log(data)
+  }
   return (
     <div className='flex min-h-screen flex-col bg-black text-white'>
       <header className='sticky top-0 z-50 w-full border-b border-white/10 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60'>
@@ -54,25 +66,14 @@ export default function Home () {
               <div className='flex flex-col justify-center space-y-6'>
                 <div className='space-y-4'>
                   <h1 className='text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none'>
-                    Red de Logística Autónoma con Economía Máquina-a-Máquina
+                    TRUE-SCHEDULER
                   </h1>
                   <p className='text-zinc-400 md:text-xl'>
-                    Una solución blockchain que permite a dispositivos IoT y agentes autónomos intercambiar servicios en
-                    una economía descentralizada.
+                    DECENTRALIZED MULTI-PURPOSE ESCROW SYSTEM
                   </p>
-                </div>
-                <div className='flex flex-col gap-3 sm:flex-row'>
-                  <Button className='bg-white text-black hover:bg-zinc-200 px-6' size='lg'>
-                    Comenzar Ahora
-                    <ArrowRight className='ml-2 h-4 w-4' />
-                  </Button>
-                  <Button
-                    variant='outline'
-                    size='lg'
-                    className='border-zinc-800 bg-transparent text-white hover:bg-zinc-900'
-                  >
-                    Ver Demostración
-                  </Button>
+                  <button onClick={handleBalance}>
+                    Balance Cuenta
+                  </button>
                 </div>
               </div>
 
@@ -141,10 +142,12 @@ export default function Home () {
                 <div className='inline-block rounded-lg bg-zinc-900 px-3 py-1 text-sm text-zinc-400'>
                   Características
                 </div>
-                <h2 className='text-2xl font-bold tracking-tighter sm:text-4xl'>Tecnología Revolucionaria</h2>
+                <h2 className='text-2xl font-bold tracking-tighter sm:text-4xl'>PARAMETERIC FREELANCE / E-COMMERCE
+                </h2>
                 <p className='max-w-[900px] text-zinc-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
-                  Nuestra plataforma blockchain integra dispositivos IoT y agentes autónomos en una red de logística
-                  descentralizada.
+                  The client deposits funds into a smart contract at the start of the project.
+                  Funds are released to the freelancer or seller as milestones are completed.
+                  Builds trust without the need for intermediaries.
                 </p>
               </div>
             </div>

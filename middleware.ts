@@ -5,7 +5,8 @@ const publicRoutes = [
   '/',
   '/legal',
   '/auth/callback',
-  '/image'
+  '/image',
+  '/contract'
 ]
 
 export async function middleware (req: { nextUrl: { pathname: string }; url: string | URL | undefined; headers: { get: (arg0: string) => string } }) {
@@ -18,7 +19,7 @@ export async function middleware (req: { nextUrl: { pathname: string }; url: str
   if (req.nextUrl.pathname.startsWith('/auth/callback')) {
     return res // Permitir el flujo de autenticación sin interrupciones
   }
-
+/*
   // Inicializa Supabase en el middleware
   const supabase = createMiddlewareClient({ req, res })
   const { data: { user } } = await supabase.auth.getUser()
@@ -56,7 +57,7 @@ export async function middleware (req: { nextUrl: { pathname: string }; url: str
     res.headers.delete('x-middleware-set-cookie')
     return res
   }
-
+*/
   return res
 }
 
