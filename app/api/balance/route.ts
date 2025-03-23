@@ -63,7 +63,14 @@ connector.connect(peerAddress);
 
 export async function POST(req) {
 
-
+    /*
+    API Endpoints (https://5837-185-84-224-94.ngrok-free.app)
+	•	/ – Test route, returns “Hello world”
+	•	/getcurrenttick – Returns current tick data
+	•	/increment?seed=… – Sends a custom tx (needs your seed)
+	•	/buy-qusd?amount=...&receiver=…– Mints and sends qUSD
+	•	/get-score – Fetches smart contract score
+     */
 
 
     return NextResponse.json({ message: 'Hello from the API!' });
