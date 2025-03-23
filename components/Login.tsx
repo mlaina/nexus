@@ -6,6 +6,7 @@ import Google from '@/components/google'
 import React, { useState } from 'react'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { Mail } from 'lucide-react'
+import Link from "next/link";
 
 export default function Login () {
   const [isLoading, setIsLoading] = useState(false)
@@ -59,28 +60,33 @@ export default function Login () {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                <Button
-                  type='submit'
-                  onClick={() => handleOAuthSignIn('custom')}
-                  className='rounded-lg text-md mt-2 w-full transition-all ease-in-out b-glow to-secondary drop-shadow-lg  font-bold'
-                  disabled={!email || isLoading}
-                >
-                  Sign in
-                </Button>
+                <Link href='/create-contract-landlord'>
+                  <Button
+                    type='submit'
+                    // onClick={() => handleOAuthSignIn('custom')}
+                    className='rounded-lg text-md mt-2 w-full transition-all ease-in-out b-glow to-secondary drop-shadow-lg  font-bold'
+                    disabled={!email || isLoading}
+                  >
+                    Sign in
+                  </Button>
+                </Link>
                 <div className='flex items-center my-3'>
                   <div className='flex-grow border-t border-gray-200' />
                   <span className='mx-4 text-gray-400'>o</span>
                   <div className='flex-grow border-t border-gray-200' />
                 </div>
-                <Button
-                  className='w-full'
-                  variant='outline'
-                  onClick={() => handleOAuthSignIn('google')}
-                  disabled={isLoading}
-                >
-                  <Google className='w-6 h-6 mr-2' />
-                  Continue with Google
-                </Button>
+
+                <Link href='/score/35256305632'>
+                  <Button
+                    className='w-full'
+                    variant='outline'
+                    // onClick={() => handleOAuthSignIn('google')}
+                    disabled={isLoading}
+                  >
+                    <Google className='w-6 h-6 mr-2' />
+                    Continue with Google
+                  </Button>
+                </Link>
                 <p className='text-xs text-gray-600 text-center mt-2'>Continue with an existing account</p>
               </>
           )}

@@ -264,97 +264,128 @@ export default function Home() {
           {/* SECTION 3: "CUSTOMER JOURNEY" */}
           <section
               id="how-it-works"
-              className="w-full py-20 border-b border-white/10 flex bg-[#131313]"
+              className="w-full py-20 border-b border-white/10 bg-[#131313]"
           >
-            <div className="container px-4 pl-12">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-zinc-900 px-3 py-1 text-sm text-zinc-100">
-                    Customer Journey
+            <div className="container mx-auto px-4">
+              {/* Flex contenedor para dos columnas en pantallas grandes */}
+              <div className="flex flex-col lg:flex-row items-start gap-12">
+                {/* COLUMNA IZQUIERDA */}
+                <div className="flex-1">
+                  {/* Encabezado centrado */}
+                  <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                    <div className="space-y-2">
+                      <div className="inline-block rounded-lg bg-zinc-900 px-3 py-1 text-sm text-zinc-100">
+                        Customer Journey
+                      </div>
+                      <h2 className="text-2xl font-bold tracking-tighter sm:text-4xl pt-6">
+                        From Rental Confirmation to Secure Deposit
+                      </h2>
+                      <p className="max-w-[900px] mx-auto text-zinc-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                        Follow the steps that guide landlords and tenants through a seamless rental
+                        experience backed by blockchain.
+                      </p>
+                    </div>
                   </div>
-                  <h2 className="text-2xl font-bold tracking-tighter sm:text-4xl pt-6">
-                    From Rental Confirmation to Secure Deposit
-                  </h2>
-                  <p className="max-w-[900px] text-zinc-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Follow the steps that guide landlords and tenants through a seamless rental
-                    experience backed by blockchain.
-                  </p>
+
+                  {/* Contenedor de pasos, alineados a la izquierda */}
+                  <div className="mx-auto max-w-3xl space-y-8 py-12 text-left">
+                    {/* Paso 1 */}
+                    <div className="flex flex-col gap-4 md:flex-row md:items-center">
+                      <div
+                          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full
+                         bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-bold text-white"
+                      >
+                        1
+                      </div>
+                      <div
+                          className="border-l-2 border-dashed border-zinc-800 pl-8
+                         md:border-l-0 md:border-t-2 md:pl-0 md:pt-8"
+                      >
+                        <h3 className="text-xl font-bold">Rental Confirmation</h3>
+                        <p className="text-zinc-400">
+                          The journey begins once the Landlord and Tenant confirm a rental. The Tenant
+                          receives an NFT representing the “TrueLease” smart deposit, and the Landlord
+                          secures the deposit for the duration.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Paso 2 */}
+                    <div className="flex flex-col gap-4 md:flex-row md:items-center">
+                      <div
+                          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full
+                         bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-bold text-white"
+                      >
+                        2
+                      </div>
+                      <div
+                          className="border-l-2 border-dashed border-zinc-800 pl-8
+                         md:border-l-0 md:border-t-2 md:pl-0 md:pt-8"
+                      >
+                        <h3 className="text-xl font-bold">Deposit & Payment</h3>
+                        <p className="text-zinc-400">
+                          “TrusKees” (the system) handles deposit transfers to the Landlord—either partially
+                          or in full. Tenant can reclaim the deposit upon contract completion. Stripe
+                          payment integration ensures a smooth, automated flow.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Paso 3 */}
+                    <div className="flex flex-col gap-4 md:flex-row md:items-center">
+                      <div
+                          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full
+                         bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-bold text-white"
+                      >
+                        3
+                      </div>
+                      <div
+                          className="border-l-2 border-dashed border-zinc-800 pl-8
+                         md:border-l-0 md:border-t-2 md:pl-0 md:pt-8"
+                      >
+                        <h3 className="text-xl font-bold">Tenant Scoring & Visibility</h3>
+                        <p className="text-zinc-400">
+                          Tenants can view transactions and invite others. The built-in tenant scoring
+                          system helps landlords evaluate new tenants, reducing risk and promoting trust.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Paso 4 */}
+                    <div className="flex flex-col gap-4 md:flex-row md:items-center">
+                      <div
+                          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full
+                         bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-bold text-white"
+                      >
+                        4
+                      </div>
+                      <div
+                          className="border-l-2 border-dashed border-zinc-800 pl-8
+                         md:border-l-0 md:border-t-2 md:pl-0 md:pt-8"
+                      >
+                        <h3 className="text-xl font-bold">Insurance & Contract Completion</h3>
+                        <p className="text-zinc-400">
+                          Optionally add insurance for extra coverage on the deposit or property. Upon
+                          contract completion, the deposit is released back to the tenant, closing the loop
+                          securely.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* COLUMNA DERECHA: Imagen */}
+                <div className="flex-1 flex items-center justify-center">
+                  <img
+                      src="/deparment.jpg"
+                      alt="hero"
+                      className="rounded-lg max-w-full h-auto"
+                  />
                 </div>
               </div>
-              <div className="mx-auto max-w-3xl space-y-8 py-12">
-                {/* Step 1 */}
-                <div className="flex flex-col gap-4 md:flex-row md:items-center">
-                  <div
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-bold text-white">
-                    1
-                  </div>
-                  <div
-                      className="border-l-2 border-dashed border-zinc-800 pl-8 md:border-l-0 md:border-t-2 md:pl-0 md:pt-8">
-                    <h3 className="text-xl font-bold">Rental Confirmation</h3>
-                    <p className="text-zinc-400">
-                      The journey begins once the Landlord and Tenant confirm a rental. The Tenant
-                      receives an NFT representing the “TrueLease” smart deposit, and the Landlord
-                      secures the deposit for the duration.
-                    </p>
-                  </div>
-                </div>
-                {/* Step 2 */}
-                <div className="flex flex-col gap-4 md:flex-row md:items-center">
-                  <div
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-bold text-white">
-                    2
-                  </div>
-                  <div
-                      className="border-l-2 border-dashed border-zinc-800 pl-8 md:border-l-0 md:border-t-2 md:pl-0 md:pt-8">
-                    <h3 className="text-xl font-bold">Deposit & Payment</h3>
-                    <p className="text-zinc-400">
-                      “TrusKees” (the system) handles deposit transfers to the Landlord—either partially
-                      or in full. Tenant can reclaim the deposit upon contract completion. Stripe
-                      payment integration ensures a smooth, automated flow.
-                    </p>
-                  </div>
-                </div>
-                {/* Step 3 */}
-                <div className="flex flex-col gap-4 md:flex-row md:items-center">
-                  <div
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-bold text-white">
-                    3
-                  </div>
-                  <div
-                      className="border-l-2 border-dashed border-zinc-800 pl-8 md:border-l-0 md:border-t-2 md:pl-0 md:pt-8">
-                    <h3 className="text-xl font-bold">Tenant Scoring & Visibility</h3>
-                    <p className="text-zinc-400">
-                      Tenants can view transactions and invite others. The built-in tenant scoring
-                      system helps landlords evaluate new tenants, reducing risk and promoting trust.
-                    </p>
-                  </div>
-                </div>
-                {/* Step 4 */}
-                <div className="flex flex-col gap-4 md:flex-row md:items-center">
-                  <div
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-lg font-bold text-white">
-                    4
-                  </div>
-                  <div
-                      className="border-l-2 border-dashed border-zinc-800 pl-8 md:border-l-0 md:border-t-2 md:pl-0 md:pt-8">
-                    <h3 className="text-xl font-bold">Insurance & Contract Completion</h3>
-                    <p className="text-zinc-400">
-                      Optionally add insurance for extra coverage on the deposit or property. Upon
-                      contract completion, the deposit is released back to the tenant, closing the loop
-                      securely.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={'w-full justify-center items-center'}>
-              <img
-                  src="/deparment.jpg"
-                  alt="hero"
-                  className="mt-4 mx-auto rounded-lg max-w-[500px] h-auto"
-              />
             </div>
           </section>
+
 
           {/* SECTION 4: "WHY QUBIC IS THE BEST FIT & WHY IT IS DIFFERENTIAL" */}
           <section id="benefits" className="w-full py-20 border-b border-white/10 flex">
