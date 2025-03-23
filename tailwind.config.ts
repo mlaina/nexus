@@ -19,6 +19,8 @@ export default {
     },
     extend: {
       colors: {
+        'blue-custom': '#259ed4',
+        'purple-custom': '#0f4682',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

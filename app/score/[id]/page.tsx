@@ -75,21 +75,24 @@ export default function BlockchainScoreDashboard() {
                                 <h1 className="text-2xl md:text-3xl font-bold text-white">Qubic Trust Score</h1>
                                 <p className="text-gray-400 mt-1">Decentralized activity analysis</p>
                             </div>
-                            <div className="mt-2 md:mt-0 px-3 py-1 border border-gray-700 rounded-full flex items-center gap-1 text-sm bg-gray-900/50 backdrop-blur-sm">
+                            <div
+                                className="mt-2 md:mt-0 px-3 py-1 border border-gray-700 rounded-full flex items-center gap-1 text-sm bg-gray-900/50 backdrop-blur-sm">
                                 <span className="h-2 w-2 rounded-full bg-green-500"></span>
                                 <span>Live Data</span>
                             </div>
                         </div>
 
                         {/* Main card with score */}
-                        <div className="border border-gray-800 rounded-xl shadow-lg bg-gray-900/70 backdrop-blur-sm p-6 md:p-8">
+                        <div
+                            className="border border-gray-800 rounded-xl shadow-lg bg-gray-900/70 backdrop-blur-sm p-6 md:p-8">
                             <div className="flex flex-col md:flex-row gap-8 items-center">
                                 {/* Score */}
                                 <div className="flex-shrink-0">
                                     <div
                                         className={`relative rounded-full h-40 w-40 flex items-center justify-center bg-gradient-to-r ${getScoreColor(userData.score)}`}
                                     >
-                                        <div className="absolute inset-1 rounded-full bg-gray-900 flex items-center justify-center">
+                                        <div
+                                            className="absolute inset-1 rounded-full bg-gray-900 flex items-center justify-center">
                                             <span className="text-5xl font-bold">{userData.score.toFixed(1)}</span>
                                         </div>
                                     </div>
@@ -102,7 +105,7 @@ export default function BlockchainScoreDashboard() {
                                         <p>{userData.country}</p>
                                         <div className="mt-1 flex items-center text-sm text-gray-400">
                       <span className="inline-flex items-center gap-1">
-                        <Shield className="h-4 w-4" />
+                        <Shield className="h-4 w-4"/>
                         Trust score based on blockchain activity
                       </span>
                                         </div>
@@ -110,20 +113,24 @@ export default function BlockchainScoreDashboard() {
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         {/* Blocks/Transactions */}
-                                        <div className="bg-gray-800/70 backdrop-blur-sm rounded-lg p-4 border border-gray-700">
+                                        <div
+                                            className="bg-gray-800/70 backdrop-blur-sm rounded-lg p-4 border border-gray-700">
                                             <div className="text-sm text-gray-400">Total Transactions Validated</div>
                                             <div className="mt-1 flex items-center">
-                                                <span className="text-2xl font-semibold text-white">{userData.transactions}</span>
-                                                <ArrowUpRight className="ml-2 h-4 w-4 text-green-500" />
+                                                <span
+                                                    className="text-2xl font-semibold text-white">{userData.transactions}</span>
+                                                <ArrowUpRight className="ml-2 h-4 w-4 text-green-500"/>
                                             </div>
                                         </div>
 
                                         {/* Last transaction */}
-                                        <div className="bg-gray-800/70 backdrop-blur-sm rounded-lg p-4 border border-gray-700">
+                                        <div
+                                            className="bg-gray-800/70 backdrop-blur-sm rounded-lg p-4 border border-gray-700">
                                             <div className="text-sm text-gray-400">Last Ledger Entry</div>
                                             <div className="mt-1 flex items-center">
-                                                <CalendarDays className="h-4 w-4 text-gray-400 mr-1" />
-                                                <span className="text-white">{formatDate(userData.lastTransaction)}</span>
+                                                <CalendarDays className="h-4 w-4 text-gray-400 mr-1"/>
+                                                <span
+                                                    className="text-white">{formatDate(userData.lastTransaction)}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -133,9 +140,10 @@ export default function BlockchainScoreDashboard() {
 
                         {/* Additional info cards */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div className="bg-gray-900/70 backdrop-blur-sm border border-gray-800 rounded-xl shadow-md p-4">
+                            <div
+                                className="bg-gray-900/70 backdrop-blur-sm border border-gray-800 rounded-xl shadow-md p-4">
                                 <div className="text-sm font-medium text-gray-400 flex items-center gap-2">
-                                    <Shield className="h-4 w-4" />
+                                    <Shield className="h-4 w-4"/>
                                     Security Level
                                 </div>
                                 <div className="mt-2 text-xl font-semibold text-white">
@@ -143,17 +151,19 @@ export default function BlockchainScoreDashboard() {
                                 </div>
                             </div>
 
-                            <div className="bg-gray-900/70 backdrop-blur-sm border border-gray-800 rounded-xl shadow-md p-4">
+                            <div
+                                className="bg-gray-900/70 backdrop-blur-sm border border-gray-800 rounded-xl shadow-md p-4">
                                 <div className="text-sm font-medium text-gray-400 flex items-center gap-2">
-                                    <Database className="h-4 w-4" />
+                                    <Database className="h-4 w-4"/>
                                     Current Renting
                                 </div>
                                 <div className="mt-2 text-xl font-semibold text-white">Madrid, Arganzuela</div>
                             </div>
 
-                            <div className="bg-gray-900/70 backdrop-blur-sm border border-gray-800 rounded-xl shadow-md p-4">
+                            <div
+                                className="bg-gray-900/70 backdrop-blur-sm border border-gray-800 rounded-xl shadow-md p-4">
                                 <div className="text-sm font-medium text-gray-400 flex items-center gap-2">
-                                    <Activity className="h-4 w-4" />
+                                    <Activity className="h-4 w-4"/>
                                     Network Trend
                                 </div>
                                 <div className="mt-2 text-xl font-semibold text-green-500">Positive</div>
@@ -163,12 +173,21 @@ export default function BlockchainScoreDashboard() {
                         {/* Certificate Download Button */}
                         <button
                             onClick={handleDownloadCertificate}
-                            className="w-full py-4 px-6 flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl text-white font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/20 group"
+                            className="w-full py-4 px-6 flex items-center justify-center gap-3 bg-gradient-to-r from-blue-custom to-purple-custom rounded-xl text-white font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/20 group"
                         >
-                            <FileText className="h-5 w-5 group-hover:animate-pulse" />
+                            <FileText className="h-5 w-5 group-hover:animate-pulse"/>
                             <span>Download Blockchain Verified Certificate</span>
-                            <Download className="h-5 w-5 ml-1" />
+                            <Download className="h-5 w-5 ml-1"/>
                         </button>
+
+                        <div className='flex flex-col items-center gap-4'>
+                            <p className={'text-gray-500'}>by</p>
+                            <img
+                                src="/vottun.png"
+                                alt="Vottun Logo"
+                                className="w-40"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
