@@ -13,9 +13,9 @@ const poppins = Poppins({
 
 // Update the metadata
 export const metadata = {
-  title: 'Nexus - Logística Autónoma Blockchain',
+  title: 'Trust Lease',
   description:
-    'Solución blockchain para logística autónoma con economía máquina-a-máquina, dispositivos IoT y agentes autónomos.'
+    'Decentralized scoring for secure leasing'
 }
 
 export default async function RootLayout ({ children }) {

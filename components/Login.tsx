@@ -43,7 +43,7 @@ export default function Login () {
   }
 
   return (
-      <div className='w-full max-w-[550px] h-full m-auto backdrop-blur-sm rounded-lg shadow-lg'>
+      <div className='w-full max-w-[650px] h-full m-auto backdrop-blur-sm rounded-lg shadow-lg'>
         <div className='w-full border-glow-container rounded-lg p-4 bg-white lg:bg-white/80 backdrop-blur-sm min-h-[240px]'>
           <div className='border-glow absolute inset-0 rounded-lg pointer-events-none min-h-[240px]' />
           {!message.text && (
@@ -65,7 +65,7 @@ export default function Login () {
                   className='rounded-lg text-md mt-2 w-full transition-all ease-in-out b-glow to-secondary drop-shadow-lg  font-bold'
                   disabled={!email || isLoading}
                 >
-                  Login
+                  Sign in
                 </Button>
                 <div className='flex items-center my-3'>
                   <div className='flex-grow border-t border-gray-200' />
@@ -79,9 +79,9 @@ export default function Login () {
                   disabled={isLoading}
                 >
                   <Google className='w-6 h-6 mr-2' />
-                  Continúa con Google
+                  Continue with Google
                 </Button>
-                <p className='text-xs text-gray-600 text-center mt-2'>Continua con una cuenta existente</p>
+                <p className='text-xs text-gray-600 text-center mt-2'>Continue with an existing account</p>
               </>
           )}
           {message.text && (
