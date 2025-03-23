@@ -19,6 +19,7 @@ import {
     CreditCard,
     Info,
 } from "lucide-react"
+import Link from "next/link";
 
 export default function LandlordContractForm() {
     // Form state
@@ -454,14 +455,16 @@ export default function LandlordContractForm() {
                             </div>
 
                             {/* Submit Button */}
-                            <button
-                                type="submit"
-                                className="w-full py-4 px-6 flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl text-white font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/20 group"
-                            >
-                                <FileText className="h-5 w-5 group-hover:animate-pulse" />
-                                <span>Register Blockchain Contract</span>
-                                <ArrowRight className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            <Link href="/contract/35256305632">
+                                <button
+                                    type="submit"
+                                    className="w-full py-4 px-6 flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl text-white font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/20 group"
+                                >
+                                    <FileText className="h-5 w-5 group-hover:animate-pulse" />
+                                    <span>Register Blockchain Contract</span>
+                                    <ArrowRight className="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" />
+                                </button>
+                            </Link>
                         </form>
                     </div>
                 </div>
