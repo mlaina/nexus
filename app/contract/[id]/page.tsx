@@ -23,7 +23,7 @@ import {
     X,
 } from "lucide-react"
 
-const priceId = 'price_1R5n7TFMSRXIywTHgUltuNhl'
+const priceId = 'price_1R5nTvFMSRXIywTHOQjyCrxh'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
@@ -122,7 +122,7 @@ export default function TenantContractView() {
         })
 
         // Submit form data
-        alert("Contract accepted successfully! In a production environment, this would be registered on the blockchain.")
+        //alert("Contract accepted successfully! In a production environment, this would be registered on the blockchain.")
     }
 
     // Format date for display

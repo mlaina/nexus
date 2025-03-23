@@ -5,7 +5,7 @@ import { CalendarDays, ArrowUpRight, Database, Shield, Activity, Download, FileT
 import { useParams } from "next/navigation"
 import { useSupabaseClient } from "@supabase/auth-helpers-react"
 
-const QUBICIP = "https://5837-185-84-224-94.ngrok-free.app"
+const QUBICIP = "https://c95a-185-84-224-94.ngrok-free.app"
 
 export default function BlockchainScoreDashboard() {
     const params = useParams()
@@ -23,6 +23,12 @@ export default function BlockchainScoreDashboard() {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
+
+                const smartcontractResponse = await fetch("/api/score", {
+                    method: "GET"
+                })
+                const smartcontract = await smartcontractResponse.json()
+
                 const { data, error } = await supabase
                     .from("users")
                     .select("*")
@@ -34,15 +40,9 @@ export default function BlockchainScoreDashboard() {
                     return
                 }
 
-                const smartcontractResponse = await fetch(QUBICIP + "/get-score", {
-                    method: "GET",
-                    body: JSON.stringify({ userId }),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                })
-                const smartcontract = await smartcontractResponse.json()
 
+
+                console.log("smartcontract", smartcontract)
                 setUserData({
                     name: data.name || "",
                     score: smartcontract.score || 0,
