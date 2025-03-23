@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { CalendarDays, ArrowUpRight, Database, Shield, Activity } from "lucide-react"
+import { CalendarDays, ArrowUpRight, Database, Shield, Activity, Download, FileText } from "lucide-react"
 
 export default function BlockchainScoreDashboard() {
     // Example data - replace with real data
@@ -10,7 +10,7 @@ export default function BlockchainScoreDashboard() {
         score: 8.5,
         transactions: 124,
         lastTransaction: "2025-03-22T23:30:00",
-        country: "Spain"
+        country: "Spain",
     })
 
     // Function to determine score color based on value
@@ -32,6 +32,18 @@ export default function BlockchainScoreDashboard() {
         }).format(date)
     }
 
+    // Function to handle certificate download
+    const handleDownloadCertificate = () => {
+        // In a real application, this would generate and download a certificate
+        // For now, we'll just show an alert
+        alert(
+            "Certificate download initiated. In a production environment, this would generate a blockchain-verified trust certificate.",
+        )
+
+        // Alternatively, this could trigger a download of a pre-generated certificate
+        // window.open('/api/generate-certificate', '_blank');
+    }
+
     return (
         <div className="min-h-screen relative text-white overflow-hidden">
             {/* Background with blockchain-inspired elements */}
@@ -51,7 +63,6 @@ export default function BlockchainScoreDashboard() {
                         }}
                     ></div>
                 </div>
-
             </div>
 
             {/* Content */}
@@ -100,7 +111,7 @@ export default function BlockchainScoreDashboard() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         {/* Blocks/Transactions */}
                                         <div className="bg-gray-800/70 backdrop-blur-sm rounded-lg p-4 border border-gray-700">
-                                            <div className="text-sm text-gray-400">Total Blocks Validated</div>
+                                            <div className="text-sm text-gray-400">Total Transactions Validated</div>
                                             <div className="mt-1 flex items-center">
                                                 <span className="text-2xl font-semibold text-white">{userData.transactions}</span>
                                                 <ArrowUpRight className="ml-2 h-4 w-4 text-green-500" />
@@ -137,9 +148,7 @@ export default function BlockchainScoreDashboard() {
                                     <Database className="h-4 w-4" />
                                     Current Renting
                                 </div>
-                                <div className="mt-2 text-xl font-semibold text-white">
-                                   Madrid, Arganzuela
-                                </div>
+                                <div className="mt-2 text-xl font-semibold text-white">Madrid, Arganzuela</div>
                             </div>
 
                             <div className="bg-gray-900/70 backdrop-blur-sm border border-gray-800 rounded-xl shadow-md p-4">
@@ -150,6 +159,16 @@ export default function BlockchainScoreDashboard() {
                                 <div className="mt-2 text-xl font-semibold text-green-500">Positive</div>
                             </div>
                         </div>
+
+                        {/* Certificate Download Button */}
+                        <button
+                            onClick={handleDownloadCertificate}
+                            className="w-full py-4 px-6 flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl text-white font-medium transition-all duration-200 shadow-lg hover:shadow-blue-500/20 group"
+                        >
+                            <FileText className="h-5 w-5 group-hover:animate-pulse" />
+                            <span>Download Blockchain Verified Certificate</span>
+                            <Download className="h-5 w-5 ml-1" />
+                        </button>
                     </div>
                 </div>
             </div>
