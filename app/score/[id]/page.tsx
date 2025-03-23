@@ -29,12 +29,24 @@ export default function BlockchainScoreDashboard() {
                 })
                 const smartcontract = await smartcontractResponse.json()
 
+                console.log("smartcontract", smartcontract.score)
+                setUserData({
+                    ...userData,
+                    score: smartcontract.score/10 || 0
+                })
                 const { data, error } = await supabase
                     .from("users")
                     .select("*")
                     .eq("id", userId)
                     .single()
 
+                setUserData({
+                    ...userData,
+                    name: data.name || "",
+                    transactions: smartcontract.transactions || 0,
+                    lastTransaction: smartcontract.last_transaction || "2025-03-22T23:30:00",
+                    country: data.country || "Spain",
+                })
                 if (error) {
                     console.error("Error fetching user data:", error)
                     return
@@ -42,14 +54,7 @@ export default function BlockchainScoreDashboard() {
 
 
 
-                console.log("smartcontract", smartcontract)
-                setUserData({
-                    name: data.name || "",
-                    score: smartcontract.score || 0,
-                    transactions: smartcontract.transactions || 0,
-                    lastTransaction: smartcontract.last_transaction || "2025-03-22T23:30:00",
-                    country: data.country || "Spain",
-                })
+
             } catch (error) {
                 console.error("Error unexpected:", error)
             }
