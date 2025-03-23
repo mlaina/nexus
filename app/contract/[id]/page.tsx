@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { loadStripe } from '@stripe/stripe-js'
 
 import { useState } from "react"
 import {
@@ -21,6 +22,10 @@ import {
     Check,
     X,
 } from "lucide-react"
+
+const priceId = 'price_1R5n7TFMSRXIywTHgUltuNhl'
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
 export default function TenantContractView() {
     // Pre-filled data from landlord (would come from API/database in a real app)
@@ -128,6 +133,24 @@ export default function TenantContractView() {
             month: "long",
             year: "numeric",
         }).format(date)
+    }
+
+    const handleCheckout = async () => {
+        const stripe = await stripePromise
+
+        const response = await fetch('/api/stripe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ priceId })
+        })
+        const session = await response.json()
+        if (stripe) {
+            await stripe.redirectToCheckout({ sessionId: session.id })
+        } else {
+            console.error('Stripe.js no se ha cargado correctamente.')
+        }
     }
 
     return (
@@ -451,6 +474,7 @@ export default function TenantContractView() {
                                 <button
                                     type="submit"
                                     disabled={!formData.kycVerified}
+                                    onClick={handleCheckout}
                                     className={`py-4 px-6 flex items-center justify-center gap-3 rounded-xl text-white font-medium transition-all duration-200 shadow-lg ${
                                         formData.kycVerified
                                             ? "bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 hover:shadow-green-500/20 group"
